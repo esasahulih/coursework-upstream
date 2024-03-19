@@ -12,6 +12,7 @@ import json
 import io
 from pathlib import Path
 from typing import Collection
+from typing import Union
 
 try:
     from uchicago.cs.gradescope.validators import Validator
@@ -20,7 +21,7 @@ except ImportError:
 
 
 def gen_validator_output(
-    validators: Collection[Validator], gradescope_f: Path | None
+    validators: Collection[Validator], gradescope_f: Union[Path, None]
 ) -> None:
     validator_output = io.StringIO()
 
